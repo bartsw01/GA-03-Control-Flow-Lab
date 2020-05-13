@@ -24,15 +24,25 @@ month = input("Enter the month with 3 characters(i.e. Jan or Dec) ").upper()
 
 # months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
 
-day = input("Enter the day of the month: ")
+day = int(input("Enter the day of the month: "))
 
-if month == 'JAN' or 'FEB' or ('MAR' and day <= 19) or ('DEC' and day >= 21):
+if month in ('JAN', 'FEB', 'MAR'): 
     season = 'Winter'
-elif month == 'APR' or 'MAY' or ('MAR' and day >= 20) or ('JUN' and day <= 20):    
+elif month in ('APR', 'MAY', 'JUN'):    
     season = 'Spring'
-elif month == 'JUL' or 'AUG' or ('JUN' and day >= 21) or ('SEP' and day <=21):    
+elif month in ('JUL', 'AUG', 'SEP'):    
     season = 'Summer'
-elif month == 'OCT' or 'NOV' or ('SEP' and day >= 22) or ('DEC' and day <= 20):    
+else:
     season = 'Fall'
+if month == 'Mar' and day > 19:
+  season = 'Spring'
+elif month == 'Jun' and day > 20:
+  season = 'Summer'
+elif month == 'Sep' and day > 21:
+  season = 'Fall'
+elif month == 'Dec' and day > 20:
+  season = 'Winter'    
 
 print(f"{month}, {day} is in {season}")
+
+

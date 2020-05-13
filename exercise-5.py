@@ -12,16 +12,30 @@
 #      etc.
 
 # Hint: The next number is found by adding the two numbers before it
-fib_number = 50
 
+term = 0
 num1 = 0
 num2 = 1
+while term <= 50:
+    if term < 2:
+        print(f'term: {term} / number: {term}')
+    else:
+        fib_num = num1 + num2
+        print(f'term: {term} / number: {fib_num}') 
+        num1 = num2
+        num2 = fib_num
+    term += 1       
 
-while num2 < fib_number:
-    print(num2)
-    num1, num2 = num2, num1 + num2
 
-# a, b = 0, 1
-# while b < 50:
-    # print(b)
-    # a, b = b, a + b
+# term = 0
+# a = 0
+# b = 1
+# while term < 51:
+#   if term < 2:
+#     print(f'term: {term} / number: {term}')
+#   else:
+#     num = a + b
+#     print(f'term: {term} / number: {num}')
+#     a = b
+#     b = num
+#   term += 1    
